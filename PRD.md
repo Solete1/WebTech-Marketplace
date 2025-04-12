@@ -11,14 +11,14 @@ A platform where students and staff can post about products they wish to purchas
 - Website has to be visually appealing, which entails: 
   1. Following a specific color scheme: black (#000000), white (#FFFFFF), dark green (#06402B), and light green (#E8FF8A).
   2. Using a consistent font:
-    > Titles and subtitles: Peace Sans
-    > Text: Helvetica World
-    > Buttons: Agrandir Grand
+    - Titles and subtitles: Peace Sans
+    - Text: Helvetica World
+    - Buttons: Agrandir Grand
   3. Including the logo (BM) in each page:
-    > Title page: Under the main title
-    > Purchase and sell page: Bottom right corner
+    - Title page: Under the main title
+    - Purchase and sell page: Bottom right corner
   4. Modifying the background color of buttons when the mouse is on them.
-    > From light green (#E8FF8A) to white (#FFFFFF).
+    - From light green (#E8FF8A) to white (#FFFFFF).
 
 ### List of 4–6 Intended Pages: 
 - Homepage
@@ -27,7 +27,7 @@ A platform where students and staff can post about products they wish to purchas
   3. Babson background picture
   4. Six buttons leading to other pages of the website.
       
-- Marketplace page for users to purchase the products.
+- Purchase: Marketplace page for users to purchase the products.
   1. Title
   2. Logo
   3. White background
@@ -37,7 +37,7 @@ A platform where students and staff can post about products they wish to purchas
   7. Each listing will contain the item name, price, quality state, and a small description.
   8. Under each listing, there will be an “add to cart” button. 
 
-- Page where users fill out a form with the details of their products so the admins can post about them on the website.
+- Sell: Page where users fill out a form with the details of their products so the admins can post about them on the website.
   1. Title
   2. Logo
   3. White background
@@ -49,8 +49,10 @@ A platform where students and staff can post about products they wish to purchas
       - Additional comments
       - Button to upload pictures
   5. Two buttons on the bottom right that allow the seller to “save draft” or “submit” their work.
+     
 - About Us 
   1. Can include “Contact Info” section
+     
 - User profile
 
 ### Brief Notes on Design/Interaction
