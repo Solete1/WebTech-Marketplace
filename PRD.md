@@ -11,14 +11,14 @@ A platform where students and staff can post about products they wish to purchas
 - Website has to be visually appealing, which entails: 
   1. Following a specific color scheme: black (#000000), white (#FFFFFF), dark green (#06402B), and light green (#E8FF8A).
   2. Using a consistent font:
-    - Titles and subtitles: Peace Sans
-    - Text: Helvetica World
-    - Buttons: Agrandir Grand
+      - Titles and subtitles: Peace Sans
+      - Text: Helvetica World
+      - Buttons: Agrandir Grand
   3. Including the logo (BM) in each page:
-    - Title page: Under the main title
-    - Purchase and sell page: Bottom right corner
+      - Title page: Under the main title
+      - Purchase and sell page: Bottom right corner
   4. Modifying the background color of buttons when the mouse is on them.
-    - From light green (#E8FF8A) to white (#FFFFFF).
+      - From light green (#E8FF8A) to white (#FFFFFF).
 
 ### List of 4–6 Intended Pages: 
 - Homepage
