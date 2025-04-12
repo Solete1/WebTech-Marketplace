@@ -9,16 +9,16 @@ A platform where students and staff can post about products they wish to purchas
 - Storefront aspect, which allows users to select the product they are interested in and purchase it. 
 - Each product posting has to have at least one picture, the price, the state of the article, a title, and a small description.
 - Website has to be visually appealing, which entails: 
-1. Following a specific color scheme: black (#000000), white (#FFFFFF), dark green (#06402B), and light green (#E8FF8A).
-2. Using a consistent font:
-> Titles and subtitles: Peace Sans
-> Text: Helvetica World
-> Buttons: Agrandir Grand
-3. Including the logo (BM) in each page:
-> Title page: Under the main title
-> Every other page: bottom right corner
-4. Modifying the background color of buttons when the mouse is on them.
-> From light green (#E8FF8A) to white (#FFFFFF).
+  1. Following a specific color scheme: black (#000000), white (#FFFFFF), dark green (#06402B), and light green (#E8FF8A).
+  2. Using a consistent font:
+    > Titles and subtitles: Peace Sans
+    > Text: Helvetica World
+    > Buttons: Agrandir Grand
+  3. Including the logo (BM) in each page:
+    > Title page: Under the main title
+    > Purchase and sell page: Bottom right corner
+  4. Modifying the background color of buttons when the mouse is on them.
+    > From light green (#E8FF8A) to white (#FFFFFF).
 
 ### List of 4–6 Intended Pages: 
 - Homepage
@@ -41,7 +41,7 @@ A platform where students and staff can post about products they wish to purchas
   1. Title
   2. Logo
   3. White background
-  4. Green boxes that each contain a section that sellers need to complete:
+  4. Green boxes that contain sections for sellers to complete:
       - Small description
       - Price
       - Pick up options
@@ -49,11 +49,10 @@ A platform where students and staff can post about products they wish to purchas
       - Additional comments
       - Button to upload pictures
   5. Two buttons on the bottom right that allow the seller to “save draft” or “submit” their work.
-
 - About Us 
   1. Can include “Contact Info” section
 - User profile
-- 
+
 ### Brief Notes on Design/Interaction
 - Option to sort between the photos of a product (like an arrow that allows you to choose the next image when you give on the photo).
 - A drop-down filter that allows users to choose what type of article they want to see (shirts, kitchen appliances, etc.)
