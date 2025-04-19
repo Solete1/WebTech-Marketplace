@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Peace Sans";
+    src: url("fonts/PeaceSans.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Agrandir Grand";
+    src: url("fonts/Agrandir-Grand.otf") format("opentype");
+  }
