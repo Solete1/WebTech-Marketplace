@@ -37,6 +37,23 @@ h1, .page-title {
   margin-bottom: 20px;
 }
 
+.navbar {display: flex;
+  justify-content: center;
+  background-color:  #06402B;
+  padding: 10px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
 /* ========== FLEX + CONTAINER UTILS ========== */
 .container,
 .flex-row {

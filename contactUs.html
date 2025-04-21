@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="styles/websitestyles.css">
+</head>
+<body>
+    <header class = "header">Contact Us</header>
+
+    <div class="nav">
+        <a href="homepage.html" target="_blank">Homepage</a>
+        <a href="listings.html" target="_blank">Listings</a>
+        <a href="sellpage.html" target="_blank">Sell Products</a>
+    </div>
+
+    <div class = "container">
+        <div class="section2">
+            <p>Feel free to reach out using the form below. We're happy to answer any questions or concerns!</p>
+        
+            <form method="POST" action="https://oim.108122.xyz/form2">
+                <fieldset>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="country">Country:</label><br>
+                    <input list="countries" id="country" name="country">
+                    <datalist id="countries">
+                        <option value="United States">
+                        <option value="Canada">
+                        <option value="United Kingdom">
+                    </datalist><br><br>
+
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class = "section2">
+            <p style = "font-size: 25px;">Contact Info</p>
+            <ul style = "font-size: 20px; text-align: center;">
+                <li>Personal Email: ####</li>
+                <li>School Email: ####</li>
+                <li>Phone Number: ######</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
