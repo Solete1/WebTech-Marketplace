@@ -1,205 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/marketStyle.css">
-    <title>MarketPlace Sell Page</title>
-</head>
-
-<style>
-    body {
-        margin: 0;
-        font-family: "Agrandir Grand", sans-serif;
-        background-color: #06402B;
-        color: white;
-    }
-
-    header {
-        background-color: white;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .logo {
-        font-family: "Peace Sans", sans-serif;
-        font-size: 40px;
-        font-weight: bold;
-        color: black;
-    }
-
-    .nav-buttons {
-        display: flex;
-        gap: 20px;
-    }
-
-    .nav-buttons button {
-        background-color: #F0FF87;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 25px;
-        font-size: 14px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .icons {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-
-    main {
-        padding: 30px;
-    }
-
-    .section {
-        background-color: #06402B;
-        padding: 20px;
-        margin-bottom: 20px;
-        border: 2px solid white;
-        border-radius: 8px;
-    }
-
-    .section h2 {
-        margin-bottom: 10px;
-        font-size: 18px;
-    }
-
-    input[type="text"],
-    textarea {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        margin-top: 5px;
-        font-size: 16px;
-    }
-
-    .options-row {
-        display: flex;
-        gap: 20px;
-        margin-top: 15px;
-    }
-
-    .option-box {
-        flex: 1;
-    }
-
-    .pill-button {
-        background-color: white;
-        color: black;
-        border: none;
-        border-radius: 30px;
-        padding: 10px 20px;
-        font-weight: bold;
-        margin-right: 10px;
-        margin-top: 10px;
-        cursor: pointer;
-    }
-
-    .upload-section {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .upload-section input[type="file"] {
-        color: white;
-    }
-
-    .bottom-buttons {
-        display: flex;
-        justify-content: flex-end;
-        gap: 20px;
-        margin-top: 30px;
-    }
-
-    .bottom-buttons button {
-        padding: 15px 30px;
-        font-weight: bold;
-        font-size: 16px;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-    }
-
-    .save {
-        background-color: #181929;
-        color: white;
-    }
-
-    .submit {
-        background-color: black;
-        color: white;
-    }
-
-    .bm-logo {
-        margin-left: auto;
-        padding-left: 10px;
-    }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/marketStyle.css">
+  <title>Marketplace Sell Page</title>
 </head>
 <body>
-<header>
+  <header>
     <div class="logo">SELL</div>
     <div class="nav-buttons">
-        <button>POST A PRODUCT</button>
-        <button>ABOUT US</button>
-        <button>CONTACT US</button>
+      <button class="btn-pill">POST A PRODUCT</button>
+      <button class="btn-pill">LISTINGS</button>
+      <button class="btn-pill">CONTACT US</button>
     </div>
     <div class="icons">
-        <img src="images/profile-icon.svg" alt="Profile" width="30"/>
-        <img src="images/cart-icon.svg" alt="Cart" width="30"/>
+      <img src="images/profile-icon.svg" alt="Profile" width="30" />
+      <img src="images/cart-icon.svg" alt="Cart" width="30" />
     </div>
-</header>
+  </header>
 
-<main>
-    <div class="section">
-        <h2>WHAT WOULD YOU LIKE THE DESCRIPTION OF YOUR LISTING TO BE? (MAX 300 CHARACTERS)</h2>
-        <textarea rows="4" placeholder="User input..."></textarea>
-    </div>
-
-    <div class="options-row">
-        <div class="section option-box">
-            <h2>PRICE</h2>
-            <input type="text" placeholder="User input..." />
-        </div>
-
-        <div class="section option-box">
-            <h2>PICK UP OPTIONS</h2>
-            <button class="pill-button">SHIPPING</button>
-            <button class="pill-button">IN-PERSON</button>
-        </div>
-
-        <div class="section option-box">
-            <h2>QUALITY</h2>
-            <button class="pill-button">LIKE NEW</button>
-            <button class="pill-button">GOOD</button>
-            <button class="pill-button">USED</button>
-        </div>
+  <main>
+    <div class="card">
+      <h2 class="section-title">WHAT WOULD YOU LIKE THE DESCRIPTION OF YOUR LISTING TO BE? (MAX 300 CHARACTERS)</h2>
+      <textarea rows="4" placeholder="User input..." class="input"></textarea>
     </div>
 
-    <div class="section">
-        <h2>ANY ADDITIONAL DETAILS?</h2>
-        <textarea rows="3" placeholder="User input..."></textarea>
+    <div class="flex-row">
+      <div class="card option-box">
+        <h2 class="section-title">PRICE</h2>
+        <input type="text" placeholder="User input..." class="input" />
+      </div>
+
+      <div class="card option-box">
+        <h2 class="section-title">PICK UP OPTIONS</h2>
+        <button class="btn-pill">SHIPPING</button>
+        <button class="btn-pill">IN-PERSON</button>
+      </div>
+
+      <div class="card option-box">
+        <h2 class="section-title">QUALITY</h2>
+        <button class="btn-pill">LIKE NEW</button>
+        <button class="btn-pill">GOOD</button>
+        <button class="btn-pill">USED</button>
+      </div>
     </div>
 
-    <div class="section">
-        <h2>UPLOAD YOUR PICTURES</h2>
-        <div class="upload-section">
-            <img src="images/folder-icon.svg" alt="Upload" width="30"/>
-            <input type="file" />
-        </div>
+    <div class="card">
+      <h2 class="section-title">ANY ADDITIONAL DETAILS?</h2>
+      <textarea rows="3" placeholder="User input..." class="input"></textarea>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">UPLOAD YOUR PICTURES</h2>
+      <div class="upload-section">
+        <img src="images/folder-icon.svg" alt="Upload" width="30" />
+        <input type="file" />
+      </div>
     </div>
 
     <div class="bottom-buttons">
-        <button class="save">SAVE DRAFT</button>
-        <button class="submit">SUBMIT</button>
-        <img src="images/bm-logo.svg" alt="BM Logo" width="40" class="bm-logo"/>
+      <button class="btn btn-save">SAVE DRAFT</button>
+      <button class="btn btn-submit">SUBMIT</button>
+      <img src="images/bm-logo.svg" alt="BM Logo" width="40" class="bm-logo" />
     </div>
-</main>
+  </main>
 </body>
 </html>

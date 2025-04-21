@@ -1,9 +1,162 @@
+/* ========== FONTS ========== */
 @font-face {
-    font-family: "Peace Sans";
-    src: url("fonts/PeaceSans.ttf") format("truetype");
-  }
-  
-  @font-face {
-    font-family: "Agrandir Grand";
-    src: url("fonts/Agrandir-Grand.otf") format("opentype");
-  }
+  font-family: "Peace Sans";
+  src: url("../fonts/PeaceSans.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Agrandir Grand";
+  src: url("../fonts/Agrandir-Grand.otf") format("opentype");
+}
+
+/* ========== BASE RESET ========== */
+body {
+  margin: 0;
+  font-family: "Agrandir Grand", sans-serif;
+  background-color: #06402B;
+  color: white;
+}
+
+/* ========== HEADINGS & TITLES ========== */
+h1, .page-title {
+  font-family: "Peace Sans", sans-serif;
+  font-size: 50px;
+  background-color: #06402B;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 60px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-family: "Peace Sans", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ========== FLEX + CONTAINER UTILS ========== */
+.container,
+.flex-row {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+/* ========== HEADER ========== */
+header {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Peace Sans", sans-serif;
+  font-size: 40px;
+  color: black;
+  font-weight: bold;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ========== REUSABLE CARD BOX ========== */
+.card {
+  background-color: #06402B;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
+}
+
+/* ========== NAV PANEL (home blocks) ========== */
+.nav {
+  text-align: center;
+  width: 25%;
+}
+
+/* ========== FORM BLOCKS ========== */
+.form-section {
+  max-width: 600px;
+  margin: auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.input, input[type="text"], input[type="email"], input[type="tel"], textarea {
+  width: 95%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Agrandir Grand";
+  margin-bottom: 15px;
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.btn-pill {
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: white;
+  color: black;
+}
+
+.btn-save {
+  background-color: #181929;
+  color: white;
+}
+
+.btn-submit {
+  background-color: black;
+  color: white;
+}
+
+/* ========== GRID LAYOUT FOR REVIEWS + LISTINGS ========== */
+.paired-box {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.paired-row {
+  display: flex;
+  gap: 4%;
+  margin-bottom: 15px;
+}
+
+.paired-row .card {
+  flex: 1;
+  min-width: 40%;
+  background-color: #0a5a3c;
+}
