@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/marketStyle.css">
+  <title>Post Details</title>
+</head>
+<body>
+  <h1 class="page-title">Post Details</h1>
+
+  <div class="navbar">
+    <a href="homepage.html" target="_blank">Homepage</a>
+    <a href="listings.html" target="_blank">Listings</a>
+    <a href="sellpage.html" target="_blank">Sell Products</a>
+  </div>
+
+  <div class="card form-section">
+    <div class="section-title" id="post-title">Your Listing</div>
+
+    <div class="container">
+      <img id="post-image" src="images/denim-jacket-placeholder.jpg" alt="Uploaded Product" width="300" style="border-radius: 10px;" />
+
+      <div class="card" style="flex: 1;">
+        <p><strong>Description:</strong><br><span id="post-description"></span></p>
+        <p><strong>Price:</strong> $<span id="post-price"></span></p>
+        <p><strong>Pick Up Option:</strong> <span id="post-pickup"></span></p>
+        <p><strong>Quality:</strong> <span id="post-quality"></span></p>
+        <p><strong>Additional Details:</strong><br><span id="post-details"></span></p>
+      </div>
+    </div>
+
+    <div class="bottom-buttons" style="justify-content: center; margin-top: 40px;">
+      <button class="btn btn-submit" onclick="deleteListing()">Delete This Listing</button>
+    </div>
+  </div>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem('selectedListing'));
+
+    if (data) {
+      document.getElementById('post-description').textContent = data.description;
+      document.getElementById('post-price').textContent = data.price;
+      document.getElementById('post-pickup').textContent = data.pickup;
+      document.getElementById('post-quality').textContent = data.quality;
+      document.getElementById('post-details').textContent = data.details;
+      document.getElementById('post-title').textContent = data.description.slice(0, 30) + '...';
+
+      if (data.image) {
+        document.getElementById('post-image').src = data.image;
+      }
+    }
+
+    function deleteListing() {
+      const listings = JSON.parse(localStorage.getItem('listings')) || [];
+      const updated = listings.filter(listing => {
+        return !(
+          listing.description === data.description &&
+          listing.price === data.price &&
+          listing.details === data.details &&
+          listing.pickup === data.pickup &&
+          listing.quality === data.quality &&
+          listing.image === data.image
+        );
+      });
+
+      localStorage.setItem('listings', JSON.stringify(updated));
+      localStorage.removeItem('selectedListing');
+      window.location.href = 'listings.html';
+    }
+  </script>
+</body>
+</html>

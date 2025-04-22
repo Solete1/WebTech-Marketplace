@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/marketStyle.css">
+  <title>Marketplace Sell Page</title>
+</head>
+<body>
+  <header>
+    <div class="logo">SELL</div>
+    <div class="nav-buttons">
+      <button class="btn-pill"><a href="profile.html" target="_blank">YOUR PROFILE</a></button>
+      <button class="btn-pill"><a href="listings.html" target="_blank">LISTINGS</a></button>
+      <button class="btn-pill"><a href="contactUs.html" target="_blank">CONTACT US</a></button>
+    </div>
+    <div class="icons">
+      <img src="images/profile-icon.svg" alt="Profile" width="30" />
+      <img src="images/cart-icon.svg" alt="Cart" width="30" />
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2 class="section-title">WHAT WOULD YOU LIKE THE DESCRIPTION OF YOUR LISTING TO BE? (MAX 300 CHARACTERS)</h2>
+      <textarea id="description" rows="4" placeholder="User input..." class="input"></textarea>
+    </div>
+
+    <div class="flex-row">
+      <div class="card option-box">
+        <h2 class="section-title">PRICE</h2>
+        <input type="text" id="price" placeholder="User input..." class="input" />
+      </div>
+
+      <div class="card option-box">
+        <h2 class="section-title">PICK UP OPTIONS</h2>
+        <button class="btn-pill" onclick="selectOption('pickup', 'Shipping')">SHIPPING</button>
+        <button class="btn-pill" onclick="selectOption('pickup', 'In-Person')">IN-PERSON</button>
+      </div>
+
+      <div class="card option-box">
+        <h2 class="section-title">QUALITY</h2>
+        <button class="btn-pill" onclick="selectOption('quality', 'Like New')">LIKE NEW</button>
+        <button class="btn-pill" onclick="selectOption('quality', 'Good')">GOOD</button>
+        <button class="btn-pill" onclick="selectOption('quality', 'Used')">USED</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">ANY ADDITIONAL DETAILS?</h2>
+      <textarea id="details" rows="3" placeholder="User input..." class="input"></textarea>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">UPLOAD YOUR PICTURES</h2>
+      <div class="upload-section">
+        <img src="images/folder-icon.svg" alt="Upload" width="30" />
+        <input type="file" id="imageUpload" />
+      </div>
+    </div>
+
+    <div class="bottom-buttons">
+      <button class="btn btn-save">SAVE DRAFT</button>
+      <button class="btn btn-submit" onclick="submitListing()">SUBMIT</button>
+      <img src="images/bm-logo.svg" alt="BM Logo" width="40" class="bm-logo" />
+    </div>
+  </main>
+
+  <script>
+    let listingData = {
+      pickup: '',
+      quality: ''
+    };
+
+    function selectOption(type, value) {
+      listingData[type] = value;
+    }
+
+    function submitListing() {
+      const description = document.getElementById('description').value;
+      const price = document.getElementById('price').value;
+      const details = document.getElementById('details').value;
+      const imageInput = document.getElementById('imageUpload');
+      const file = imageInput.files[0];
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const imageData = e.target.result;
+
+          const data = {
+            description,
+            price,
+            pickup: listingData.pickup || 'Not specified',
+            quality: listingData.quality || 'Not specified',
+            details,
+            image: imageData
+          };
+
+          const listings = JSON.parse(localStorage.getItem('listings')) || [];
+          listings.push(data);
+          localStorage.setItem('listings', JSON.stringify(listings));
+
+          localStorage.setItem('selectedListing', JSON.stringify(data));
+          window.location.href = 'posting.html';
+        };
+        reader.readAsDataURL(file);
+      } else {
+        const data = {
+          description,
+          price,
+          pickup: listingData.pickup || 'Not specified',
+          quality: listingData.quality || 'Not specified',
+          details,
+          image: null
+        };
+
+        const listings = JSON.parse(localStorage.getItem('listings')) || [];
+        listings.push(data);
+        localStorage.setItem('listings', JSON.stringify(listings));
+
+        localStorage.setItem('selectedListing', JSON.stringify(data));
+        window.location.href = 'posting.html';
+      }
+    }
+  </script>
+</body>
+</html>
