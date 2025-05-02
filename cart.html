@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/marketStyle.css">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <title>Your Cart</title>
+</head>
+<body>
+  <h1 class="page-title">Your Cart</h1>
+
+  <div class="navbar">
+    <a href="index.html">Homepage</a>
+    <a href="listings.html">Listings</a>
+    <a href="sellpage.html">Sell Products</a>
+  </div>
+
+  <div class="form-section card">
+    <div class="section-title">Items in Cart</div>
+    <ul id="cart-items" style="list-style: none; padding: 0;"></ul>
+    <p><strong>Total:</strong> $<span id="cart-total">0</span></p>
+  </div>
+
+  <script>
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+      window.location.href = 'login.html';
+    }
+
+    const allCarts = JSON.parse(localStorage.getItem('carts')) || {};
+    const userCart = allCarts[currentUser] || [];
+
+    const cartList = document.getElementById('cart-items');
+    const totalDisplay = document.getElementById('cart-total');
+
+    let total = 0;
+    userCart.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.description} - $${item.price}`;
+      cartList.appendChild(li);
+      total += parseFloat(item.price);
+    });
+
+    totalDisplay.textContent = total.toFixed(2);
+  </script>
+</body>
+</html>

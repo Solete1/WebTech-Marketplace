@@ -32,6 +32,10 @@
       </div>
     </div>
 
+    <div id="purchaseButtonContainer" class="bottom-buttons" style="justify-content: center; margin-top: 20px;">
+      <button class="btn btn-submit" onclick="purchaseListing()">Purchase</button>
+    </div>
+
     <div id="deleteButtonContainer">
       <button class="btn btn-submit" onclick="deleteListing()">Delete This Listing</button>
     </div>
@@ -56,7 +60,9 @@
 
     const currentUser = localStorage.getItem('currentUser');
     
-    if (currentUser !== data.postedBy) {
+    if (currentUser === data.postedBy) {
+      document.getElementById('purchaseButtonContainer').style.display = 'none';
+    } else {
       document.getElementById('deleteButtonContainer').style.display = 'none';
     }
 
@@ -73,9 +79,34 @@
         );
       });
 
+
       localStorage.setItem('listings', JSON.stringify(updated));
       localStorage.removeItem('selectedListing');
       window.location.href = 'listings.html';
+    }
+
+    function purchaseListing() {
+      const currentUser = localStorage.getItem('currentUser');
+      if (!currentUser) {
+        alert("You must be logged in to purchase.");
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      const allCarts = JSON.parse(localStorage.getItem('carts')) || {};
+      const userCart = allCarts[currentUser] || [];
+
+  // Add this listing to the user's cart
+      userCart.push({
+        description: data.description,
+        price: data.price
+      });
+      
+      allCarts[currentUser] = userCart;
+      localStorage.setItem('carts', JSON.stringify(allCarts));
+      
+      alert("Added to cart!");
+      window.location.href = 'cart.html';
     }
   </script>
 </body>
