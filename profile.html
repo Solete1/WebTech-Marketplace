@@ -26,25 +26,80 @@
 
     <label for="phone">Phone Number:</label>
     <input type="tel" id="phone" class="input" placeholder="Your phone number" />
-  </div>
 
-  <div class="paired-box card">
-    <div class="section-title">Listings & Reviews</div>
-
-    <div class="paired-row">
-      <div class="card">Vintage Denim Jacket - $45</div>
-      <div class="card">⭐️⭐️⭐️⭐️⭐️ “Amazing product! Super fast delivery.”</div>
+    <div class="bottom-buttons">
+      <button class="btn btn-submit" onclick="saveProfile()">Save Changes</button>
     </div>
 
-    <div class="paired-row">
-      <div class="card">LED Desk Lamp - $20</div>
-      <div class="card">⭐️⭐️⭐️⭐️ “Exactly as described. Very helpful seller.”</div>
+    <div class="form-section card">
+      <div class="section-title">Your Listings</div>
+      <div class="listing-grid" id="userListingsGrid"></div>
     </div>
+    
+  <script>
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+      window.location.href = 'login.html';
+    }
 
-    <div class="paired-row">
-      <div class="card">Canvas Tote Bag - $12</div>
-      <div class="card">⭐️⭐️⭐️ “Nice item but took a while to arrive.”</div>
-    </div>
-  </div>
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find(u => u.username === currentUser);
+
+    if (user) {
+      document.getElementById('name').value = user.username;
+      document.getElementById('email').value = user.email || '';
+      document.getElementById('phone').value = user.phone || '';
+    }
+
+    function saveProfile() {
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+
+      const updatedUsers = users.map(u => {
+        if (u.username === currentUser) {
+          return {
+            ...u,
+            email,
+            phone
+          };
+        }
+        return u;
+      });
+
+      localStorage.setItem('users', JSON.stringify(updatedUsers));
+      alert('Profile updated successfully!'); 
+    }
+//display users own postings
+      const allListings = JSON.parse(localStorage.getItem('listings')) || [];
+      const userListings = allListings.filter(listing => listing.postedBy === currentUser);
+    
+      const grid = document.getElementById('userListingsGrid');
+      grid.innerHTML = '';
+      userListings.forEach(listing => {
+        const item = document.createElement('div');
+        item.className = 'listing-item';
+
+        const img = document.createElement('img');
+        img.src = listing.image || 'images/fallback.jpg';
+        img.alt = listing.description;
+
+        const title = document.createElement('div');
+ 
+        title.className = 'listing-title';
+        title.textContent = listing.description.slice(0, 30) + '...';
+
+      item.appendChild(img);
+      item.appendChild(title);
+
+
+      item.onclick = () => {
+        localStorage.setItem('selectedListing', JSON.stringify(listing));
+        window.location.href = 'posting.html';
+      };
+      
+      grid.appendChild(item);
+});
+    
+  </script>
 </body>
 </html>

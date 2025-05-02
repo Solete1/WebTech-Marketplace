@@ -23,7 +23,6 @@
       <img id="post-image" src="images/denim-jacket-placeholder.jpg" alt="Uploaded Product" width="300" style="border-radius: 10px;" />
 
       <div class="card" style="flex: 1;">
-        <p><strong>Posted by:</strong> <span id="post-user"></span></p>
         <p><strong>Description:</strong><br><span id="post-description"></span></p>
         <p><strong>Price:</strong> $<span id="post-price"></span></p>
         <p><strong>Pick Up Option:</strong> <span id="post-pickup"></span></p>
@@ -32,7 +31,7 @@
       </div>
     </div>
 
-    <div id="deleteButtonContainer">
+    <div class="bottom-buttons" style="justify-content: center; margin-top: 40px;">
       <button class="btn btn-submit" onclick="deleteListing()">Delete This Listing</button>
     </div>
   </div>
@@ -47,17 +46,10 @@
       document.getElementById('post-quality').textContent = data.quality;
       document.getElementById('post-details').textContent = data.details;
       document.getElementById('post-title').textContent = data.description.slice(0, 30) + '...';
-      document.getElementById('post-user').textContent = data.postedBy || 'Unknown';
 
       if (data.image) {
         document.getElementById('post-image').src = data.image;
       }
-    }
-
-    const currentUser = localStorage.getItem('currentUser');
-    
-    if (currentUser !== data.postedBy) {
-      document.getElementById('deleteButtonContainer').style.display = 'none';
     }
 
     function deleteListing() {

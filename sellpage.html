@@ -89,13 +89,16 @@
         reader.onload = function (e) {
           const imageData = e.target.result;
 
+          const currentUser = localStorage.getItem('currentUser');
+          
           const data = {
             description,
             price,
             pickup: listingData.pickup || 'Not specified',
             quality: listingData.quality || 'Not specified',
             details,
-            image: imageData
+            image: imageData,
+            postedBy: currentUser
           };
 
           const listings = JSON.parse(localStorage.getItem('listings')) || [];
