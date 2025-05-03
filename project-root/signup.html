@@ -4,22 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/marketStyle.css">
-  <link rel="icon" href="images/favicon.png" type="image/png">
   <title>Signup</title>
 </head>
 <body>
-    
   <h1 class="page-title">Create an Account</h1>
-
-  <div class="navbar">
-    <a href="index.html" target="_blank">Homepage</a>
-    <a href="listings.html" target="_blank">Listings</a>
-    <a href="sellpage.html" target="_blank">Sell Products</a>
-  </div>
-  
   <div class="form-section card">
     <label for="new-username">Username:</label>
     <input type="text" id="new-username" class="input" placeholder="Choose a username" />
+
+    <label for="new-email">Email:</label>
+    <input type="email" id="new-email" class="input" placeholder="Your email address" />
+
+    <label for="new-phone">Phone Number:</label>
+    <input type="tel" id="new-phone" class="input" placeholder="Your phone number" />
 
     <label for="new-password">Password:</label>
     <input type="password" id="new-password" class="input" placeholder="Create a password" />
@@ -28,8 +25,42 @@
     <input type="password" id="confirm-password" class="input" placeholder="Confirm your password" />
 
     <div class="bottom-buttons">
-      <button class="btn btn-submit">Signup</button>
+      <button class="btn btn-submit" onclick="signupUser()">Signup</button>
     </div>
   </div>
+
+  <script>
+    function signupUser() {
+      const username = document.getElementById('new-username').value.trim();
+      const email = document.getElementById('new-email').value.trim();
+      const phone = document.getElementById('new-phone').value.trim();
+      const password = document.getElementById('new-password').value.trim();
+      const confirmPassword = document.getElementById('confirm-password').value.trim();
+
+      if (!username || !email || !phone || !password || !confirmPassword) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+
+      const userExists = users.some(u => u.username === username);
+      if (userExists) {
+        alert('Username already exists. Please choose another.');
+        return;
+      }
+
+      users.push({ username, email, phone, password });
+      localStorage.setItem('users', JSON.stringify(users));
+
+      alert('Account created successfully! Please log in.');
+      window.location.href = 'login.html';
+    }
+  </script>
 </body>
 </html>
