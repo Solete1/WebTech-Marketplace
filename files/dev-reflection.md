@@ -1,11 +1,11 @@
 
 Dev reflection prompts:
 
-How did you interpret and implement someone else’s idea? 
+## How did you interpret and implement someone else’s idea? 
 This project was pretty wide range in scope, so thankfully my PM did a fantastic job with the PRD and Wireframe. This gave me a a solid idea of the layput and overall theme of some of the pages before I had even began coding, it was just a matter of bringing it to a functional reality. Beyond that I tried to think about facebook marketplace as an overall structure and what pages and required information were needed for everything to be functional.
 
-What were the challenges in development and collaboration?
+## What were the challenges in development and collaboration?
 The main challenges with development was the scope. Getting the initial groundwork for the basic home, buy, sell, and contact pages were simple enough, but as the requirements for functionality grew, so did the complexity of the pages and the connections between them. One notable challenge was implementing the ability to delete postings if you were the user that posted it, and purchase postings that you had not listed. This meant that based on the currentUser, different buttons with different functionality had to appear. Overall adding in a sign up and login page ended up adding quite a bit to this project as it meant that each page had to be updated with additional scripts in order to achieve a working product. In terms of collaboration, Sol was incredibly easy to work with, responsive, and understanding.
 
-Which parts did you use AI tools for, and what did you learn from that?
+## Which parts did you use AI tools for, and what did you learn from that?
 I used AI tools quite a bit for this project. There was a large number of pages that this project needed, and AI was incredibly helpful with establishing a lot of the more basic structure of these pages. I also used AI to help create a streamlined stylesheet once I had a few working pages in order to keep the look of the website consistent across pages. AI was also used to implement some of the scripts, especially those related to the currentUser requirements that became more prevelant on each page as the project continued.
